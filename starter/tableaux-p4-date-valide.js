@@ -52,15 +52,15 @@ function isValid(jour, mois, annee) {
 console.log(isValid(37, 12, 2012));*/
 
 function isValid (jour, mois, annee){
-    const maxDays = [31, isBissextile(annee)? 29 :28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    const maxDays = [31, isBissextile(annee)? 29 :28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-    if (isNaN(jour) || isNaN(mois) || isNaN(annee) || jour <= 0 || mois <= 0 || annee <= 0 || mois >12) {
+    if (isNaN(jour) || isNaN(mois) || isNaN(annee) || jour <= 0 || mois <= 0 || annee <= 0 || mois >12 || jour > maxDays[mois-1]) {
         return false;
-    }else if (jour > 0 && jour < maxDays) {
-        return true;
     } else {
-        return false;
+        return true;
     }
 }
 
-console.log(isValid(5,11, 2004))
+console.log(isValid(29, 2, 2012))
+
+
